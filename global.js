@@ -41,6 +41,9 @@ var question_five = {
 var question_list = [question_one, question_two, question_three, question_four,
   question_five];
   
+  
+var total_questions = question_list.length;  
+
 var questions = shuffleArray(question_list);
 var score;
 score = 0;
@@ -49,7 +52,11 @@ while (questions.length > 0){
   var user_answer = prompt(question.question + "\nchoices: " + question.choices);
   if (user_answer == question.answer){
     score++;
+    alert("Correct!");
+  }
+  else {
+    alert("Incorrect!");
   }
 }
   
-alert("Your score was:" + score);
+alert("Your score was:" + score + "/" + total_questions);
